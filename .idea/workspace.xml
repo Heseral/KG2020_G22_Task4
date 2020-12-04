@@ -7,7 +7,20 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
   <component name="ProjectId" id="1kxaPfDaJRk2D8lYb5Li4HXG9S8" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showExcludedFiles" value="true" />
@@ -15,18 +28,23 @@
   </component>
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/symja-parser2016-02-06" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
   </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\Programs\GitHubRepos\KG2020_G22_Task4\src" />
+    </key>
+  </component>
   <component name="RunManager">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="kg2019examples_task4threedimensions.Main" />
+      <option name="MAIN_CLASS_NAME" value="Main" />
       <module name="KG2019Examples_Task4ThreeDimensions-master" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="kg2019examples_task4threedimensions.*" />
+          <option name="PATTERN" value=".*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -74,30 +92,34 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="414" y="174" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1606644954816" />
+    <state x="765" y="228" key="#com.intellij.ide.util.MemberChooser" timestamp="1607099823387">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="765" y="228" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1040@0.0.1920.1040" timestamp="1607099823387" />
     <state x="808" y="408" key="#com.intellij.ide.util.projectWizard.JdkChooserPanel.MyDialog" timestamp="1606644715799">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="808" y="408" key="#com.intellij.ide.util.projectWizard.JdkChooserPanel.MyDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1606644715799" />
-    <state x="740" y="273" key="FileChooserDialogImpl" timestamp="1606644863577">
+    <state x="740" y="273" key="FileChooserDialogImpl" timestamp="1607099545272">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="740" y="273" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1606644863577" />
-    <state width="1876" height="217" key="GridCell.Tab.0.bottom" timestamp="1606645205542">
+    <state x="740" y="273" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1607099545272" />
+    <state width="1876" height="277" key="GridCell.Tab.0.bottom" timestamp="1607100418507">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1876" height="217" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1606645205542" />
-    <state width="1876" height="217" key="GridCell.Tab.0.center" timestamp="1606645205542">
+    <state width="1876" height="277" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1607100418507" />
+    <state width="1876" height="277" key="GridCell.Tab.0.center" timestamp="1607100418507">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1876" height="217" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1606645205542" />
-    <state width="1876" height="217" key="GridCell.Tab.0.left" timestamp="1606645205542">
+    <state width="1876" height="277" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1607100418507" />
+    <state width="1876" height="277" key="GridCell.Tab.0.left" timestamp="1607100418507">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1876" height="217" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1606645205542" />
-    <state width="1876" height="217" key="GridCell.Tab.0.right" timestamp="1606645205542">
+    <state width="1876" height="277" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1607100418507" />
+    <state width="1876" height="277" key="GridCell.Tab.0.right" timestamp="1607100418507">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1876" height="217" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1606645205542" />
+    <state width="1876" height="277" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1607100418507" />
     <state width="1876" height="217" key="GridCell.Tab.1.bottom" timestamp="1606645205542">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -114,9 +136,9 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1876" height="217" key="GridCell.Tab.1.right/0.0.1920.1040@0.0.1920.1040" timestamp="1606645205542" />
-    <state x="440" y="93" key="SettingsEditor" timestamp="1606644868219">
+    <state x="440" y="93" key="SettingsEditor" timestamp="1607099546642">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="440" y="93" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1606644868219" />
+    <state x="440" y="93" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1607099546642" />
   </component>
 </project>
