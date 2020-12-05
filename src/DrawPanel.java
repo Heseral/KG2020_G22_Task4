@@ -10,18 +10,15 @@ import java.awt.image.BufferedImage;
 import javax.swing.JPanel;
 import draw.IDrawer;
 import draw.SimpleEdgeDrawer;
-import math.Vector3;
 import screen.ScreenConverter;
 import third.Camera;
 import third.Scene;
-import models.Parallelepiped;
 
 /**
  *
  * @author Alexey
  */
-public class DrawPanel extends JPanel
-        implements CameraController.RepaintListener {
+public class DrawPanel extends JPanel implements CameraController.RepaintListener {
     private Scene scene;
     private ScreenConverter sc;
     private Camera cam;
@@ -32,14 +29,9 @@ public class DrawPanel extends JPanel
         sc = new ScreenConverter(-1, 1, 2, 2, 1, 1);
         cam = new Camera();
         camController = new CameraController(cam, sc);
-        scene = new Scene(Color.WHITE.getRGB());
-        scene.showAxes();
-        
-        scene.getModelsList().add(new Parallelepiped(
-                new Vector3(-0.4f, -0.4f, -0.4f), 
-                new Vector3(0.4f, 0.4f, 0.4f)
-        ));
-        
+        setScene(new Scene(Color.WHITE.getRGB()));
+        getScene().showAxes();
+
         camController.addRepaintListener(this);
         addMouseListener(camController);
         addMouseMotionListener(camController);
@@ -52,7 +44,7 @@ public class DrawPanel extends JPanel
         BufferedImage bi = new BufferedImage(getWidth(), getHeight(), BufferedImage.TYPE_INT_RGB);
         Graphics2D graphics = (Graphics2D)bi.getGraphics();
         IDrawer dr = new SimpleEdgeDrawer(sc, graphics);
-        scene.drawScene(dr, cam);
+        getScene().drawScene(dr, cam);
         g.drawImage(bi, 0, 0, null);
         graphics.dispose();
     }
@@ -60,5 +52,13 @@ public class DrawPanel extends JPanel
     @Override
     public void shouldRepaint() {
         repaint();
+    }
+
+    public Scene getScene() {
+        return scene;
+    }
+
+    public void setScene(Scene scene) {
+        this.scene = scene;
     }
 }

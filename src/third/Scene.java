@@ -4,6 +4,7 @@
  */
 package third;
 
+import java.awt.*;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collection;
@@ -23,7 +24,7 @@ public class Scene {
     public List<IModel> getModelsList() {
         return models;
     }
-    
+
     private int backgroundColor;
 
     /**
@@ -34,7 +35,7 @@ public class Scene {
         this.backgroundColor = backgroundColorRGB;
         this.showAxes = false;
     }
-    
+
     private boolean showAxes;
 
     public boolean isShowAxes() {
@@ -44,21 +45,21 @@ public class Scene {
     public void setShowAxes(boolean showAxis) {
         this.showAxes = showAxis;
     }
-    
+
     public void showAxes() {
         this.showAxes = true;
     }
-    
+
     public void hideAxes() {
         this.showAxes = false;
     }
-    
+
     private static final List<Line3D> axes = Arrays.asList(
-            new Line3D(new Vector3(0, 0, 0), new Vector3(1, 0, 0)),
-            new Line3D(new Vector3(0, 0, 0), new Vector3(0, 1, 0)),
-            new Line3D(new Vector3(0, 0, 0), new Vector3(0, 0, 1))
+            new Line3D(new Vector3(0, 0, 0), new Vector3(10, 0, 0), Color.RED),
+            new Line3D(new Vector3(0, 0, 0), new Vector3(0, 10, 0), Color.GREEN),
+            new Line3D(new Vector3(0, 0, 0), new Vector3(0, 0, 10), Color.BLUE)
     );
-    
+
     /**
      * Рисуем сцену со всеми моделями
      * @param drawer то, с помощью чего будем рисовать
@@ -81,7 +82,7 @@ public class Scene {
                         points.add(cam.w2s(v));
                     }
                     /*Создаём на их сонове новые полилинии, но в том виде, в котором их видит камера*/
-                    lines.add(new PolyLine3D(points, pl.isClosed()));
+                    lines.add(new PolyLine3D(points, pl.isClosed(), pl.getColor()));
                 }
             }
         /*Закрашиваем фон*/

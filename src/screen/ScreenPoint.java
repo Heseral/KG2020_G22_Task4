@@ -9,19 +9,19 @@ package screen;
  * @author Alexey
  */
 public class ScreenPoint {
-    int i, j;
+    int x, y;
 
-    public ScreenPoint(int i, int j) {
-        this.i = i;
-        this.j = j;
+    public ScreenPoint(int x, int y) {
+        this.x = x;
+        this.y = y;
     }
 
-    public int getI() {
-        return i;
+    public int getX() {
+        return x;
     }
 
-    public int getJ() {
-        return j;
+    public int getY() {
+        return y;
     }
     
 }

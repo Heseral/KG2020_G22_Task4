@@ -21,8 +21,8 @@ public class ScreenCoordinates {
         yy = new int[points.size()];
         int i = 0;
         for (ScreenPoint p : points) {
-            xx[i] = p.getI();
-            yy[i] = p.getJ();
+            xx[i] = p.getX();
+            yy[i] = p.getY();
             i++;
         }
     }

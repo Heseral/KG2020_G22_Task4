@@ -4,6 +4,7 @@
  */
 package third;
 
+import java.awt.*;
 import java.util.Collection;
 import java.util.LinkedList;
 import java.util.List;
@@ -17,6 +18,7 @@ import math.Vector3;
 public class PolyLine3D {
     private List<Vector3> points;
     private boolean closed;
+    private Color color;
 
     /**
      * Создаёт новую полилинию на основе трёхмерных точек.
@@ -24,8 +26,13 @@ public class PolyLine3D {
      * @param closed признак замкнутостит линии
      */
     public PolyLine3D(Collection<Vector3> points, boolean closed) {
+        this(points, closed, Color.BLACK);
+    }
+
+    public PolyLine3D(Collection<Vector3> points, boolean closed, Color color) {
         this.points = new LinkedList<Vector3>(points);
         this.closed = closed;
+        this.setColor(color);
     }
 
     /**
@@ -56,5 +63,12 @@ public class PolyLine3D {
             sum += v.getZ();
         return sum / points.size();
     }
-    
+
+    public Color getColor() {
+        return color;
+    }
+
+    public void setColor(Color color) {
+        this.color = color;
+    }
 }

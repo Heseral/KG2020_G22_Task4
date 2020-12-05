@@ -30,15 +30,17 @@ public class SimpleEdgeDrawer extends ScreenGraphicsDrawer {
      */
     @Override
     protected void oneDraw(PolyLine3D polyline) {
+        Color baseColor = getGraphics().getColor();
+        getGraphics().setColor(polyline.getColor());
         LinkedList<ScreenPoint> points = new LinkedList<>();
         /*переводим все точки в экранные*/
         for (Vector3 v : polyline.getPoints())
             points.add(getScreenConverter().r2s(v));
-        getGraphics().setColor(Color.BLACK);
         /*если точек меньше двух, то рисуем отдельными алгоритмами*/
         if (points.size() < 2) {
             if (points.size() > 0)
-                getGraphics().fillRect(points.get(0).getI(), points.get(0).getJ(), 1, 1);
+                getGraphics().fillRect(points.get(0).getX(), points.get(0).getY(), 1, 1);
+            getGraphics().setColor(baseColor);
             return;
         }
         /*создаём хранилище этих точек в виде двух массивов*/
@@ -48,6 +50,7 @@ public class SimpleEdgeDrawer extends ScreenGraphicsDrawer {
             getGraphics().drawPolygon(crds.getXx(), crds.getYy(), crds.size());
         else
             getGraphics().drawPolyline(crds.getXx(), crds.getYy(), crds.size());
+        getGraphics().setColor(baseColor);
     }
 
     /**
