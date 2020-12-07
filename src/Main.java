@@ -3,11 +3,16 @@
  * and open the template in the editor.
  */
 
+import math.Matrix4Factories;
 import models.Function;
 import util.GlobalVar;
 
 import javax.swing.*;
 import java.awt.*;
+import java.util.Timer;
+import java.util.TimerTask;
+import java.util.concurrent.atomic.AtomicBoolean;
+import java.util.concurrent.atomic.AtomicReference;
 
 /**
  * @author Alexey
@@ -18,6 +23,8 @@ public class Main {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
+        AtomicReference<Timer> timer = new AtomicReference<>(new Timer());
+
         JFrame frame = new JFrame();
         frame.setSize(600, 600);
         frame.setResizable(false);
@@ -58,6 +65,7 @@ public class Main {
                             Integer.parseInt(yToTextField.getText())
                     )
             );
+            drawPanel.repaint();
         });
 
         editPanel.add(functionLabel);
@@ -72,7 +80,57 @@ public class Main {
         editPanel.add(yToTextField);
         editPanel.add(applyButton);
 
+        JPanel rotatePanel = new JPanel();
+        rotatePanel.setLayout(new BoxLayout(rotatePanel, BoxLayout.X_AXIS));
+        rotatePanel.setMaximumSize(new Dimension(GlobalVar.WINDOW_WIDTH, 100));
+
+        JLabel rotationDelayLabel = new JLabel("Delay:");
+        JLabel xRotateLabel = new JLabel("X:");
+        JLabel yRotateLabel = new JLabel("Y:");
+        JLabel zRotateLabel = new JLabel("Z:");
+
+        JTextField rotationDelayTextField = new JTextField("10");
+        JTextField xTextField = new JTextField(basicFunctionSize);
+        JTextField yTextField = new JTextField("0");
+        JTextField zTextField = new JTextField("0");
+
+        JButton buttonStartRotation = new JButton("Rotate");
+        AtomicBoolean rotating = new AtomicBoolean(false);
+        buttonStartRotation.addActionListener(actionEvent -> {
+            if (rotating.get()) {
+                rotating.set(false);
+                timer.get().purge();
+                timer.get().cancel();
+                timer.set(new Timer());
+                return;
+            }
+            rotating.set(true);
+            timer.get().schedule(new TimerTask() {
+                @Override
+                public void run() {
+                    drawPanel.getCamController().getCamera().modifyRotate(
+                            Matrix4Factories.rotationXYZ(0.01, Matrix4Factories.Axis.Y)
+                                    .mul(
+                                            Matrix4Factories.rotationXYZ(0, Matrix4Factories.Axis.X)
+                                    )
+                    );
+                    drawPanel.getCamController().onRepaint();
+                }
+            }, 0, Long.parseLong(rotationDelayTextField.getText()));
+        });
+
+        rotatePanel.add(rotationDelayLabel);
+        rotatePanel.add(rotationDelayTextField);
+        rotatePanel.add(xRotateLabel);
+        rotatePanel.add(xTextField);
+        rotatePanel.add(yRotateLabel);
+        rotatePanel.add(yTextField);
+        rotatePanel.add(zRotateLabel);
+        rotatePanel.add(zTextField);
+        rotatePanel.add(buttonStartRotation);
+
         mainPanel.add(editPanel);
+        mainPanel.add(rotatePanel);
         mainPanel.add(drawPanel);
 
         frame.add(mainPanel);

@@ -28,14 +28,14 @@ public class DrawPanel extends JPanel implements CameraController.RepaintListene
         super();
         sc = new ScreenConverter(-1, 1, 2, 2, 1, 1);
         cam = new Camera();
-        camController = new CameraController(cam, sc);
+        setCamController(new CameraController(cam, sc));
         setScene(new Scene(Color.WHITE.getRGB()));
         getScene().showAxes();
 
-        camController.addRepaintListener(this);
-        addMouseListener(camController);
-        addMouseMotionListener(camController);
-        addMouseWheelListener(camController);
+        getCamController().addRepaintListener(this);
+        addMouseListener(getCamController());
+        addMouseMotionListener(getCamController());
+        addMouseWheelListener(getCamController());
     }
     
     @Override
@@ -60,5 +60,13 @@ public class DrawPanel extends JPanel implements CameraController.RepaintListene
 
     public void setScene(Scene scene) {
         this.scene = scene;
+    }
+
+    public CameraController getCamController() {
+        return camController;
+    }
+
+    public void setCamController(CameraController camController) {
+        this.camController = camController;
     }
 }

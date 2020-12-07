@@ -49,9 +49,9 @@ public final class Matrix4Factories {
         
         return m;
     }
-    
+
     public static enum Axis {X, Y, Z};
-    
+
     /**
      * Создаёт матрицу поворота вокруго одной из осей на заданный угол в радианах
      * @param alpha угол в радианах
@@ -61,7 +61,20 @@ public final class Matrix4Factories {
     public static Matrix4 rotationXYZ(double alpha, Axis axis) {
         return rotationXYZ(alpha, axis == Axis.X ? 0 : axis == Axis.Y ? 1 : 2);
     }
-    
+/* todo
+    public static Matrix4 rotationXYZ(double alpha, int x, int y, int z) {
+        Matrix4 m = one();
+        int a1 = (axisIndex + 1) % 3;
+        int a2 = (axisIndex + 2) % 3;
+
+        m.setAt(a1, a1, (float)Math.cos(alpha));
+        m.setAt(a1, a2, (float)Math.sin(alpha));
+        m.setAt(a2, a1, -(float)Math.sin(alpha));
+        m.setAt(a2, a2, (float)Math.cos(alpha));
+
+        return m;
+    }
+    */
     /**
      * Создаёт новую матрицу переноса по заданным параметрам
      * @param x X-составялющая смещения

@@ -151,6 +151,37 @@ public class CameraController implements MouseListener, MouseMotionListener, Mou
         
     }
 
+    public void rotate(int dx, int dy) {
+        double da = dx * Math.PI / 180;
+        double db = dy * Math.PI / 280;
+        camera.modifyRotate(
+                Matrix4Factories.rotationXYZ(da, Matrix4Factories.Axis.Y)
+                        .mul(
+                                Matrix4Factories.rotationXYZ(db, Matrix4Factories.Axis.X)
+                        )
+        );
+    }
+
+    public void move(int dx, int dy) {
+        Vector4 zero = new Vector4(sc.s2r(new ScreenPoint(0, 0)), 0);
+        Vector4 cur = new Vector4(sc.s2r(new ScreenPoint(dx, dy)), 0);
+
+        /*Вектор смещения в реальных координатах с точки зрения камеры*/
+        Vector3 delta = cur.add(zero.mul(-1)).asVector3();
+        camera.modifyTranslate(Matrix4Factories.translation(delta));
+    }
+
+    public void movePerspective(int dx, int dy) {
+        Vector4 zero = new Vector4(sc.s2r(new ScreenPoint(0, 0)), 0);
+        Vector4 cur = new Vector4(sc.s2r(new ScreenPoint(dx, dy)), 0);
+        /*Длина вектор смещения в реальных координатах с точки зрения камеры*/
+        float length = cur.add(zero.mul(-1)).asVector3().length();
+        if (dy < 0)
+            length = -length;
+        System.out.println(length);
+        camera.modifyTranslate(Matrix4Factories.translation(0, 0, length));
+    }
+
     @Override
     public void mouseDragged(MouseEvent e) {
         Point current = e.getPoint();
@@ -160,37 +191,18 @@ public class CameraController implements MouseListener, MouseMotionListener, Mou
             int dy = current.y - last.y;
             /*Если двигаем с зажатой левой кнопкой мыши, то вращаем камеру*/
             if (leftFlag) {
-                double da = dx * Math.PI / 180;
-                double db = dy * Math.PI / 280;
-                camera.modifyRotate(
-                        Matrix4Factories.rotationXYZ(da, Matrix4Factories.Axis.Y)
-                    .mul(
-                        Matrix4Factories.rotationXYZ(db, Matrix4Factories.Axis.X)
-                    )
-                );
+                rotate(dx, dy);
             }
             /*Если двигаем с зажатой правой кнопкой мыши, то перемещаем камеру вдоль осей X и Y*/
             if (rightFlag) {
-                Vector4 zero = new Vector4(sc.s2r(new ScreenPoint(0, 0)), 0);
-                Vector4 cur = new Vector4(sc.s2r(new ScreenPoint(dx, dy)), 0);
-                
-                /*Вектор смещения в реальных координатах с точки зрения камеры*/
-                Vector3 delta = cur.add(zero.mul(-1)).asVector3();
-                camera.modifyTranslate(Matrix4Factories.translation(delta));
+                move(dx, dy);
             }
             /* Если двигаем с зажатой средней кнопкой мыши, то перемещаем камеру 
              * вдоль оси Z на расстояние равное изменению положения мыши в реальных координатах.
              * Направление выбирается положительное при движении вверх.
              */
             if (middleFlag && dy != 0) {
-                Vector4 zero = new Vector4(sc.s2r(new ScreenPoint(0, 0)), 0);
-                Vector4 cur = new Vector4(sc.s2r(new ScreenPoint(dx, dy)), 0);
-                /*Длина вектор смещения в реальных координатах с точки зрения камеры*/
-                float length = cur.add(zero.mul(-1)).asVector3().length();
-                if (dy < 0)
-                    length = -length;
-                System.out.println(length);
-                camera.modifyTranslate(Matrix4Factories.translation(0, 0, length));
+                movePerspective(dx, dy);
             }
         }
         last = current;
