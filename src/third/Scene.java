@@ -120,8 +120,8 @@ public class Scene {
                                     },
                                     {0, 0, 0, 0}
                             });
-                            Matrix4 matrix4 = pointCoordinatesAsMatrix.mul(rotationMatrix);
-                            point = new Vector3(matrix4.getAt(0, 0), matrix4.getAt(0, 1), matrix4.getAt(0, 2));
+                            Matrix4 result = pointCoordinatesAsMatrix.mul(rotationMatrix);
+                            point = new Vector3(result.getAt(0, 0), result.getAt(0, 1), result.getAt(0, 2));
 
                             /* // НЕРАБОЧИЙ ВАРИАНТ ЛЕКЦИИ
                             n1 = point.getX() / Math.sqrt(point.getX() + point.getY() + point.getZ());
@@ -179,6 +179,12 @@ public class Scene {
         drawer.clear(backgroundColor);
         /*Рисуем все линии*/
         drawer.draw(lines);
+    }
+
+    public void resetUgolPovorota() {
+        ugolPovorota = 0.01;
+        cosUglaPovorota = Math.cos(ugolPovorota);
+        sinUglaPovorota = Math.cos(ugolPovorota);
     }
 
     public void increaseUgolPovorota() {

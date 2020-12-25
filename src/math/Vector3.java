@@ -44,6 +44,18 @@ public class Vector3 {
     public double getZ() {
         return values[2];
     }
+
+    public void setX(double value) {
+        values[0] = value;
+    }
+
+    public void setY(double value) {
+        values[1] = value;
+    }
+
+    public void setZ(double value) {
+        values[2] = value;
+    }
     
     /**
      * Метод, возвращающий составляющую вектора по порядковому номеру

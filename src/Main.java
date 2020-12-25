@@ -92,7 +92,7 @@ public class Main {
 
         JTextField rotationDelayTextField = new JTextField("10");
         JTextField xTextField = new JTextField("1");
-        JTextField yTextField = new JTextField("0");
+        JTextField yTextField = new JTextField("1");
         JTextField zTextField = new JTextField("0");
 
         JButton buttonStartRotation = new JButton("Rotate");
@@ -101,6 +101,7 @@ public class Main {
             if (rotating.get()) {
                 rotating.set(false);
                 drawPanel.getScene().setRotationPoint(null);
+                drawPanel.getScene().resetUgolPovorota();
                 drawPanel.repaint();
                 timer.get().purge();
                 timer.get().cancel();
@@ -108,10 +109,15 @@ public class Main {
                 return;
             }
             rotating.set(true);
+            double x = Double.parseDouble(xTextField.getText());
+            double y = Double.parseDouble(yTextField.getText());
+            double z = Double.parseDouble(zTextField.getText());
+            double length = Math.sqrt(x * x + y * y + z * z);
+            // сделаем вектор единичным для избежания искажений
             drawPanel.getScene().setRotationPoint(new Vector3(
-                    Double.parseDouble(xTextField.getText()),
-                    Double.parseDouble(yTextField.getText()),
-                    Double.parseDouble(zTextField.getText())
+                    x / length,
+                    y / length,
+                    z / length
             ));
             timer.get().schedule(new TimerTask() {
                 @Override
