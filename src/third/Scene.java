@@ -13,7 +13,6 @@ import java.util.List;
 
 import draw.IDrawer;
 import math.Matrix4;
-import math.Matrix4Factories;
 import math.Vector3;
 import models.Line3D;
 import util.GlobalVar;
@@ -27,6 +26,9 @@ public class Scene {
     private List<IModel> models = new ArrayList<>();
     // относительно какой точки будет вращаться сцена
     private Vector3 rotationPoint;
+    public double ugolPovorota = 0.01;
+    public double cosUglaPovorota = Math.cos(ugolPovorota);
+    public double sinUglaPovorota = Math.cos(ugolPovorota);
 
     public List<IModel> getModelsList() {
         return models;
@@ -99,21 +101,21 @@ public class Scene {
                             });
                             rotationMatrix = new Matrix4(new double[][]{
                                     {
-                                            GlobalVar.COS_UGLA_POVOROTA + (1 - GlobalVar.COS_UGLA_POVOROTA) * rotationPoint.getX() * rotationPoint.getX(),
-                                            (1 - GlobalVar.COS_UGLA_POVOROTA) * rotationPoint.getX() * rotationPoint.getY() - GlobalVar.SIN_UGLA_POVOROTA * rotationPoint.getZ(),
-                                            (1 - GlobalVar.COS_UGLA_POVOROTA) * rotationPoint.getX() * rotationPoint.getZ() + GlobalVar.SIN_UGLA_POVOROTA * rotationPoint.getY(),
+                                            cosUglaPovorota + (1 - cosUglaPovorota) * rotationPoint.getX() * rotationPoint.getX(),
+                                            (1 - cosUglaPovorota) * rotationPoint.getX() * rotationPoint.getY() - sinUglaPovorota * rotationPoint.getZ(),
+                                            (1 - cosUglaPovorota) * rotationPoint.getX() * rotationPoint.getZ() + sinUglaPovorota * rotationPoint.getY(),
                                             0
                                     },
                                     {
-                                            (1 - GlobalVar.COS_UGLA_POVOROTA) * rotationPoint.getY() * rotationPoint.getX() + GlobalVar.SIN_UGLA_POVOROTA * rotationPoint.getZ(),
-                                            GlobalVar.COS_UGLA_POVOROTA + (1 - GlobalVar.COS_UGLA_POVOROTA) * rotationPoint.getY() * rotationPoint.getY(),
-                                            (1 - GlobalVar.COS_UGLA_POVOROTA) * rotationPoint.getY() * rotationPoint.getZ() - GlobalVar.SIN_UGLA_POVOROTA * rotationPoint.getX(),
+                                            (1 - cosUglaPovorota) * rotationPoint.getY() * rotationPoint.getX() + sinUglaPovorota * rotationPoint.getZ(),
+                                            cosUglaPovorota + (1 - cosUglaPovorota) * rotationPoint.getY() * rotationPoint.getY(),
+                                            (1 - cosUglaPovorota) * rotationPoint.getY() * rotationPoint.getZ() - sinUglaPovorota * rotationPoint.getX(),
                                             0
                                     },
                                     {
-                                            (1 - GlobalVar.COS_UGLA_POVOROTA) * rotationPoint.getZ() * rotationPoint.getX() - GlobalVar.SIN_UGLA_POVOROTA * rotationPoint.getY(),
-                                            (1 - GlobalVar.COS_UGLA_POVOROTA) * rotationPoint.getZ() * rotationPoint.getY() + GlobalVar.SIN_UGLA_POVOROTA * rotationPoint.getX(),
-                                            GlobalVar.COS_UGLA_POVOROTA + (1 - GlobalVar.COS_UGLA_POVOROTA) * rotationPoint.getZ() * rotationPoint.getZ(),
+                                            (1 - cosUglaPovorota) * rotationPoint.getZ() * rotationPoint.getX() - sinUglaPovorota * rotationPoint.getY(),
+                                            (1 - cosUglaPovorota) * rotationPoint.getZ() * rotationPoint.getY() + sinUglaPovorota * rotationPoint.getX(),
+                                            cosUglaPovorota + (1 - cosUglaPovorota) * rotationPoint.getZ() * rotationPoint.getZ(),
                                             0
                                     },
                                     {0, 0, 0, 0}
@@ -133,21 +135,21 @@ public class Scene {
                             });
                             second = new Matrix4(new double[][]{
                                     {
-                                            n1 * n1 + (1 - n1 * n1) * GlobalVar.COS_UGLA_POVOROTA,
-                                            n1 * n2 * (1 - GlobalVar.COS_UGLA_POVOROTA) + n3 * GlobalVar.SIN_UGLA_POVOROTA,
-                                            n1 * n3 * (1 - GlobalVar.COS_UGLA_POVOROTA) - n2 * GlobalVar.SIN_UGLA_POVOROTA,
+                                            n1 * n1 + (1 - n1 * n1) * cosUglaPovorota,
+                                            n1 * n2 * (1 - cosUglaPovorota) + n3 * sinUglaPovorota,
+                                            n1 * n3 * (1 - cosUglaPovorota) - n2 * sinUglaPovorota,
                                             0
                                     },
                                     {
-                                            n2 * n1 * (1 - GlobalVar.COS_UGLA_POVOROTA) - n3 * GlobalVar.SIN_UGLA_POVOROTA,
-                                            n2 * n2 + (1 - n2 * n2) * GlobalVar.COS_UGLA_POVOROTA,
-                                            n2 * n3 * (1 - GlobalVar.COS_UGLA_POVOROTA) + n1 * GlobalVar.SIN_UGLA_POVOROTA,
+                                            n2 * n1 * (1 - cosUglaPovorota) - n3 * sinUglaPovorota,
+                                            n2 * n2 + (1 - n2 * n2) * cosUglaPovorota,
+                                            n2 * n3 * (1 - cosUglaPovorota) + n1 * sinUglaPovorota,
                                             0
                                     },
                                     {
-                                            n3 * n1 * (1 - GlobalVar.COS_UGLA_POVOROTA) - n2 * GlobalVar.SIN_UGLA_POVOROTA,
-                                            n3 * n2 * (1 - GlobalVar.COS_UGLA_POVOROTA) - n1 * GlobalVar.SIN_UGLA_POVOROTA,
-                                            n3 * n3 + (1 - n3 * n3) * GlobalVar.COS_UGLA_POVOROTA,
+                                            n3 * n1 * (1 - cosUglaPovorota) - n2 * sinUglaPovorota,
+                                            n3 * n2 * (1 - cosUglaPovorota) - n1 * sinUglaPovorota,
+                                            n3 * n3 + (1 - n3 * n3) * cosUglaPovorota,
                                             0
                                     },
                                     {
@@ -177,6 +179,15 @@ public class Scene {
         drawer.clear(backgroundColor);
         /*Рисуем все линии*/
         drawer.draw(lines);
+    }
+
+    public void increaseUgolPovorota() {
+        ugolPovorota += 0.01;
+        if (ugolPovorota > 2 * Math.PI) {
+            ugolPovorota -= Math.PI * 2;
+        }
+        cosUglaPovorota = Math.cos(ugolPovorota);
+        sinUglaPovorota = Math.sin(ugolPovorota);
     }
 
     public Vector3 getRotationPoint() {

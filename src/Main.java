@@ -90,8 +90,8 @@ public class Main {
         JLabel yRotateLabel = new JLabel("Y:");
         JLabel zRotateLabel = new JLabel("Z:");
 
-        JTextField rotationDelayTextField = new JTextField("1");
-        JTextField xTextField = new JTextField(basicFunctionSize);
+        JTextField rotationDelayTextField = new JTextField("10");
+        JTextField xTextField = new JTextField("1");
         JTextField yTextField = new JTextField("0");
         JTextField zTextField = new JTextField("0");
 
@@ -101,6 +101,7 @@ public class Main {
             if (rotating.get()) {
                 rotating.set(false);
                 drawPanel.getScene().setRotationPoint(null);
+                drawPanel.repaint();
                 timer.get().purge();
                 timer.get().cancel();
                 timer.set(new Timer());
@@ -115,12 +116,7 @@ public class Main {
             timer.get().schedule(new TimerTask() {
                 @Override
                 public void run() {
-                    /*drawPanel.getCamController().getCamera().modifyRotate(
-                            Matrix4Factories.rotationXYZ(0.01, Matrix4Factories.Axis.Y)
-                                    .mul(
-                                            Matrix4Factories.rotationXYZ(0, Matrix4Factories.Axis.X)
-                                    )
-                    );*/
+                    drawPanel.getScene().increaseUgolPovorota();
                     drawPanel.getCamController().onRepaint();
                 }
             }, 0, Long.parseLong(rotationDelayTextField.getText()));

@@ -3,33 +3,13 @@
   <component name="ChangeListManager">
     <list default="true" id="24ce61a6-df3d-4cff-9878-328d381b5118" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/CameraController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/CameraController.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/Main$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/Main$1.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/Main.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/draw/SimpleEdgeDrawer$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/draw/SimpleEdgeDrawer$2.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/math/Matrix4.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/math/Matrix4.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/math/Matrix4Factories.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/math/Matrix4Factories.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/math/Vector3.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/math/Vector3.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/math/Vector4.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/math/Vector4.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/models/Function.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/models/Function.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/models/Parallelepiped.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/models/Parallelepiped.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/screen/ScreenConverter.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/screen/ScreenConverter.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/third/Camera.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/third/Camera.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/third/ICamera.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/third/ICamera.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/third/PolyLine3D.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/third/PolyLine3D.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/third/Scene.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/third/Scene.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/util/GlobalVar.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/util/GlobalVar.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/CameraController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/CameraController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/draw/SimpleEdgeDrawer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/draw/SimpleEdgeDrawer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/math/Matrix4.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/math/Matrix4.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/math/Matrix4Factories.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/math/Matrix4Factories.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/math/Vector3.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/math/Vector3.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/math/Vector4.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/math/Vector4.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/screen/ScreenConverter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/screen/ScreenConverter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/third/Camera.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/third/Camera.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/third/ICamera.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/third/ICamera.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/third/PolyLine3D.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/third/PolyLine3D.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/third/Scene.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/third/Scene.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/util/GlobalVar.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/util/GlobalVar.java" afterDir="false" />
     </list>
@@ -146,38 +126,38 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="740" y="273" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1607099545272" />
-    <state width="1876" height="332" key="GridCell.Tab.0.bottom" timestamp="1608927581972">
+    <state width="1876" height="266" key="GridCell.Tab.0.bottom" timestamp="1608928306544">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1876" height="332" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1608927581972" />
-    <state width="1876" height="332" key="GridCell.Tab.0.center" timestamp="1608927581972">
+    <state width="1876" height="266" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1608928306544" />
+    <state width="1876" height="266" key="GridCell.Tab.0.center" timestamp="1608928306544">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1876" height="332" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1608927581972" />
-    <state width="1876" height="332" key="GridCell.Tab.0.left" timestamp="1608927581972">
+    <state width="1876" height="266" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1608928306544" />
+    <state width="1876" height="266" key="GridCell.Tab.0.left" timestamp="1608928306544">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1876" height="332" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1608927581972" />
-    <state width="1876" height="332" key="GridCell.Tab.0.right" timestamp="1608927581972">
+    <state width="1876" height="266" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1608928306544" />
+    <state width="1876" height="266" key="GridCell.Tab.0.right" timestamp="1608928306544">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1876" height="332" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1608927581972" />
-    <state width="1876" height="332" key="GridCell.Tab.1.bottom" timestamp="1608927581972">
+    <state width="1876" height="266" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1608928306544" />
+    <state width="1876" height="266" key="GridCell.Tab.1.bottom" timestamp="1608928306545">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1876" height="332" key="GridCell.Tab.1.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1608927581972" />
-    <state width="1876" height="332" key="GridCell.Tab.1.center" timestamp="1608927581972">
+    <state width="1876" height="266" key="GridCell.Tab.1.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1608928306545" />
+    <state width="1876" height="266" key="GridCell.Tab.1.center" timestamp="1608928306545">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1876" height="332" key="GridCell.Tab.1.center/0.0.1920.1040@0.0.1920.1040" timestamp="1608927581972" />
-    <state width="1876" height="332" key="GridCell.Tab.1.left" timestamp="1608927581972">
+    <state width="1876" height="266" key="GridCell.Tab.1.center/0.0.1920.1040@0.0.1920.1040" timestamp="1608928306545" />
+    <state width="1876" height="266" key="GridCell.Tab.1.left" timestamp="1608928306544">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1876" height="332" key="GridCell.Tab.1.left/0.0.1920.1040@0.0.1920.1040" timestamp="1608927581972" />
-    <state width="1876" height="332" key="GridCell.Tab.1.right" timestamp="1608927581972">
+    <state width="1876" height="266" key="GridCell.Tab.1.left/0.0.1920.1040@0.0.1920.1040" timestamp="1608928306544" />
+    <state width="1876" height="266" key="GridCell.Tab.1.right" timestamp="1608928306545">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1876" height="332" key="GridCell.Tab.1.right/0.0.1920.1040@0.0.1920.1040" timestamp="1608927581972" />
+    <state width="1876" height="266" key="GridCell.Tab.1.right/0.0.1920.1040@0.0.1920.1040" timestamp="1608928306545" />
     <state x="440" y="93" key="SettingsEditor" timestamp="1608925914830">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -190,5 +170,16 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="616" y="235" key="run.anything.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1607100902388" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/third/Scene.java</url>
+          <line>180</line>
+          <option name="timeStamp" value="8" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>
