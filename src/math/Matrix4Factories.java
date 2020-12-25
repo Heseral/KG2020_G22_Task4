@@ -42,10 +42,10 @@ public final class Matrix4Factories {
         int a1 = (axisIndex + 1) % 3;
         int a2 = (axisIndex + 2) % 3;
         
-        m.setAt(a1, a1, (float)Math.cos(alpha));
-        m.setAt(a1, a2, (float)Math.sin(alpha));
-        m.setAt(a2, a1, -(float)Math.sin(alpha));
-        m.setAt(a2, a2, (float)Math.cos(alpha));
+        m.setAt(a1, a1, (double)Math.cos(alpha));
+        m.setAt(a1, a2, (double)Math.sin(alpha));
+        m.setAt(a2, a1, -(double)Math.sin(alpha));
+        m.setAt(a2, a2, (double)Math.cos(alpha));
         
         return m;
     }
@@ -67,10 +67,10 @@ public final class Matrix4Factories {
         int a1 = (axisIndex + 1) % 3;
         int a2 = (axisIndex + 2) % 3;
 
-        m.setAt(a1, a1, (float)Math.cos(alpha));
-        m.setAt(a1, a2, (float)Math.sin(alpha));
-        m.setAt(a2, a1, -(float)Math.sin(alpha));
-        m.setAt(a2, a2, (float)Math.cos(alpha));
+        m.setAt(a1, a1, (double)Math.cos(alpha));
+        m.setAt(a1, a2, (double)Math.sin(alpha));
+        m.setAt(a2, a1, -(double)Math.sin(alpha));
+        m.setAt(a2, a2, (double)Math.cos(alpha));
 
         return m;
     }
@@ -82,7 +82,7 @@ public final class Matrix4Factories {
      * @param z Z-составляющая смещения
      * @return матрица переноса
      */
-    public static Matrix4 translation(float x, float y, float z) {
+    public static Matrix4 translation(double x, double y, double z) {
         Matrix4 m = one();
         m.setAt(0, 3, x);
         m.setAt(1, 3, y);
@@ -106,7 +106,7 @@ public final class Matrix4Factories {
      * @param factorZ масштабирование вдоль оси Z
      * @return матрица масштабирования
      */
-    public static Matrix4 scale(float factorX, float factorY, float factorZ) {
+    public static Matrix4 scale(double factorX, double factorY, double factorZ) {
         Matrix4 m = one();
         m.setAt(0, 0, factorX);
         m.setAt(1, 1, factorY);
@@ -119,7 +119,7 @@ public final class Matrix4Factories {
      * @param factor коэффициент масштабирования
      * @return матрица масштабирования
      */
-    public static Matrix4 scale(float factor) {
+    public static Matrix4 scale(double factor) {
         return scale(factor, factor, factor);
     }
     
@@ -129,7 +129,7 @@ public final class Matrix4Factories {
      * @param axisIndex номер оси (X=0, Y=1, Z=2)
      * @return Матрица проекции
      */
-    public static Matrix4 centralProjection(float point, int axisIndex) {
+    public static Matrix4 centralProjection(double point, int axisIndex) {
         Matrix4 m = one();
         if (axisIndex < 0 || axisIndex > 2)
             return m;
@@ -143,7 +143,7 @@ public final class Matrix4Factories {
      * @param axis название оси
      * @return Матрица проекции
      */
-    public static Matrix4 centralProjection(float point, Axis axis) {
+    public static Matrix4 centralProjection(double point, Axis axis) {
         return centralProjection(point, axis == Axis.X ? 0 : axis == Axis.Y ? 1 : 2);
     }
 }

@@ -10,7 +10,7 @@ package math;
  * @author Alexey
  */
 public class Matrix4 {
-    private float[] matrix;
+    private double[] matrix;
     
     /**
      * Создаёт экзмпляр матрицы на основе двумерного массива.
@@ -18,8 +18,8 @@ public class Matrix4 {
      * корректность входных аргументов.
      * @param m входная матрица.
      */
-    public Matrix4(float[][] m) {
-        matrix = new float[16];
+    public Matrix4(double[][] m) {
+        matrix = new double[16];
         for (int i = 0; i < 4; i++)
             for (int j = 0; j < 4; j++)
                 matrix[i * 4 + j] = m[i][j];
@@ -31,7 +31,7 @@ public class Matrix4 {
      * Предполагается, что массив будет иметь правильный размер.
      * @param arr исходный массив.
      */
-    private Matrix4(float[] arr) {
+    private Matrix4(double[] arr) {
         matrix = arr;
     }
     
@@ -41,7 +41,7 @@ public class Matrix4 {
      * @param col номер столбца
      * @return значение соответствующей ячейки
      */
-    public float getAt(int row, int col) {
+    public double getAt(int row, int col) {
         return matrix[row * 4 + col];
     }
     
@@ -51,7 +51,7 @@ public class Matrix4 {
      * @param col номер столбца
      * @param value присваиваемое значение.
      */
-    public void setAt(int row, int col, float value) {
+    public void setAt(int row, int col, double value) {
         matrix[row * 4 + col] = value;
     }
     
@@ -60,7 +60,7 @@ public class Matrix4 {
      * @return соданная матрица, состоящая из нулей.
      */
     public static Matrix4 zero() {
-        return new Matrix4(new float[16]);
+        return new Matrix4(new double[16]);
     }
     
     /**
@@ -79,8 +79,8 @@ public class Matrix4 {
      * @param number число, на которое умножается матрица
      * @return новая матрица, являющаяся результатом умножения текущей матрицы на число.
      */
-    public Matrix4 mul(float number) {
-        float[] arr = new float[16];
+    public Matrix4 mul(double number) {
+        double[] arr = new double[16];
         for (int i = 0; i < arr.length; i++)
             arr[i] = this.matrix[i] * number;
         return new Matrix4(arr);
@@ -92,7 +92,7 @@ public class Matrix4 {
      * @return новый вектор-столбец, получившийся в результате умножения текущей матрицы на вектор.
      */
     public Vector4 mul(Vector4 v) {
-        float[] arr = new float[4];
+        double[] arr = new double[4];
         for (int i = 0; i < 4; i++)
             for (int j = 0; j < 4; j++)
                 arr[i] += this.getAt(i, j) * v.at(j);

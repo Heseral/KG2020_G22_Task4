@@ -55,10 +55,10 @@ public class PolyLine3D {
      * Вычисляет среднее арифметическое по оси Z.
      * @return среднее по Z для полилинии.
      */
-    public float avgZ() {
+    public double avgZ() {
         if (points == null || points.size() == 0)
             return 0;
-        float sum = 0;
+        double sum = 0;
         for (Vector3 v : points)
             sum += v.getZ();
         return sum / points.size();

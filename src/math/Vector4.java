@@ -9,7 +9,7 @@ package math;
  * @author Alexey
  */
 public class Vector4 {
-    private float[] values; /*Значения хранятся в виде массива из трёх элементов*/
+    private double[] values; /*Значения хранятся в виде массива из трёх элементов*/
     
     /**
      * Создаёт экземпляр вектора на основе значений четырёх составляющих
@@ -18,8 +18,8 @@ public class Vector4 {
      * @param z третья составляющая, описывающая Z-координату
      * @param w четвёртая составляющая, описывающая нормализующее значение
      */
-    public Vector4(float x, float y, float z, float w) {
-        values = new float[]{x, y, z, w};
+    public Vector4(double x, double y, double z, double w) {
+        values = new double[]{x, y, z, w};
     }
     
     /**
@@ -29,7 +29,7 @@ public class Vector4 {
      * @param y вторая составляющая, описывающая Y-координату
      * @param z третья составляющая, описывающая Z-координату
      */
-    public Vector4(float x, float y, float z) {
+    public Vector4(double x, double y, double z) {
         this(x, y, z, 0);
     }
     
@@ -39,7 +39,7 @@ public class Vector4 {
      * @param v экземпляр трёхмерного вектора
      * @param w четвёртая составляющая.
      */
-    public Vector4(Vector3 v, float w) {
+    public Vector4(Vector3 v, double w) {
         this(v.getX(), v.getY(), v.getZ(), w);
     }
     
@@ -59,7 +59,7 @@ public class Vector4 {
      * без дополнительных обработок и проверок.
      * @param array массив с данными
      */
-    private Vector4(float[] array) {
+    private Vector4(double[] array) {
         this.values = array;
     }
     
@@ -68,7 +68,7 @@ public class Vector4 {
      * @return нулевой четырёхмерный вектор.
      */
     public static Vector4 zero() {
-        return new Vector4(new float[4]);
+        return new Vector4(new double[4]);
     }
     
     /**
@@ -76,8 +76,8 @@ public class Vector4 {
      * @param number число, на которое умножается текущий вектор
      * @return новый вектор, который является результатом умножения.
      */
-    public Vector4 mul(float number) {
-        float[] array = new float[4];
+    public Vector4 mul(double number) {
+        double[] array = new double[4];
         for (int i = 0; i < array.length; i++)
             array[i] = number * this.at(i);
         return new Vector4(array);
@@ -89,7 +89,7 @@ public class Vector4 {
      * @return рещультирующий вектор.
      */
     public Vector4 add(Vector4 other) {
-        float[] array = new float[4];
+        double[] array = new double[4];
         for (int i = 0; i < array.length; i++)
             array[i] = this.at(i) + other.at(i);
         return new Vector4(array);
@@ -98,7 +98,7 @@ public class Vector4 {
     /**
      * Очень маленькое число для сравнений
      */
-    private static final float EPSILON = 1e-10f;
+    private static final double EPSILON = 1e-10f;
     
     /**
      * Возвращает нормализованный по W четырёхмерный вектор.
@@ -126,7 +126,7 @@ public class Vector4 {
      * X-составляющая вектора
      * @return X-составляющая вектора
      */
-    public float getX() {
+    public double getX() {
         return values[0];
     }
 
@@ -134,7 +134,7 @@ public class Vector4 {
      * Y-составляющая вектора
      * @return Y-составляющая вектора
      */
-    public float getY() {
+    public double getY() {
         return values[1];
     }
 
@@ -142,7 +142,7 @@ public class Vector4 {
      * Z-составляющая вектора
      * @return Z-составляющая вектора
      */
-    public float getZ() {
+    public double getZ() {
         return values[2];
     }
     
@@ -150,7 +150,7 @@ public class Vector4 {
      * W-составляющая вектора
      * @return W-составляющая вектора
      */
-    public float getW() {
+    public double getW() {
         return values[3];
     }
     
@@ -159,7 +159,7 @@ public class Vector4 {
      * @param idx порядковый номер
      * @return значение составляющей вектора
      */
-    public float at(int idx) {
+    public double at(int idx) {
         return values[idx];
     }
 }

@@ -17,5 +17,5 @@ public interface ICamera {
      * @param v преобразуемая точка
      * @return новая точка
      */
-    public Vector3 w2s(Vector3 v);
+    public Vector3 worldToScreen(Vector3 v);
 }

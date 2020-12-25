@@ -24,7 +24,7 @@ public class Camera implements ICamera {
         scale = Matrix4.one();
         projection = Matrix4.one();
     }
-    
+
     /**
      * Метод, преобразуюший точку из меировой системы координат в систему координат камеры.
      * Сначала к вектору применяется масштаб(S), далее поворот(R), потом перенос(T) и в конце - проекция(P).
@@ -33,7 +33,7 @@ public class Camera implements ICamera {
      * @return новый вектор
      */
     @Override
-    public Vector3 w2s(Vector3 v) {
+    public Vector3 worldToScreen(Vector3 v) {
         return projection.mul(
             translate.mul(
                 rotate.mul(
@@ -44,7 +44,7 @@ public class Camera implements ICamera {
             )
         ).asVector3();
     }
-    
+
     public void modifyProjection(Matrix4 dp) {
         this.projection = dp.mul(this.projection);
     }
@@ -60,7 +60,7 @@ public class Camera implements ICamera {
     public void modifyRotate(Matrix4 dp) {
         this.rotate = dp.mul(this.rotate);
     }
-    
+
     public Matrix4 getRotate() {
         return rotate;
     }
@@ -72,7 +72,7 @@ public class Camera implements ICamera {
     public void modifyScale(Matrix4 dp) {
         this.scale = dp.mul(this.scale);
     }
-    
+
     public Matrix4 getScale() {
         return scale;
     }
@@ -84,7 +84,7 @@ public class Camera implements ICamera {
     public void modifyTranslate(Matrix4 dp) {
         this.translate = dp.mul(this.translate);
     }
-    
+
     public Matrix4 getTranslate() {
         return translate;
     }
@@ -92,6 +92,6 @@ public class Camera implements ICamera {
     public void setTranslate(Matrix4 translate) {
         this.translate = translate;
     }
-    
-    
+
+
 }

@@ -175,7 +175,7 @@ public class CameraController implements MouseListener, MouseMotionListener, Mou
         Vector4 zero = new Vector4(sc.s2r(new ScreenPoint(0, 0)), 0);
         Vector4 cur = new Vector4(sc.s2r(new ScreenPoint(dx, dy)), 0);
         /*Длина вектор смещения в реальных координатах с точки зрения камеры*/
-        float length = cur.add(zero.mul(-1)).asVector3().length();
+        double length = cur.add(zero.mul(-1)).asVector3().length();
         if (dy < 0)
             length = -length;
         System.out.println(length);
@@ -223,8 +223,8 @@ public class CameraController implements MouseListener, MouseMotionListener, Mou
             camera.modifyProjection(Matrix4Factories.centralProjection(delta*5f, Matrix4Factories.Axis.Z));
         } else {
             /*Вычислим коэффициент масштаба*/
-            float factor = 1;
-            float scale = delta < 0 ? 0.9f : 1.1f;
+            double factor = 1;
+            double scale = delta < 0 ? 0.9f : 1.1f;
             int counter = delta < 0 ? -delta : delta;
             while (counter-- > 0)
                 factor *= scale;

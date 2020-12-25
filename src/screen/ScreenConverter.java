@@ -42,10 +42,10 @@ public class ScreenConverter {
      * @param z Z-составляющая
      * @return результирующая трёхмерная точка.
      */
-    public Vector3 s2r(ScreenPoint p, float z) {
+    public Vector3 s2r(ScreenPoint p, double z) {
         double x = xr + p.getX() * wr / ws;
         double y = yr - p.getY() * hr / hs;
-        return new Vector3((float)x, (float)y, z);
+        return new Vector3((double)x, (double)y, z);
     }
     
     /**

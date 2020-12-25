@@ -74,10 +74,10 @@ public class SimpleEdgeDrawer extends ScreenGraphicsDrawer {
     @Override
     protected Comparator<PolyLine3D> getComparator() {
         return new Comparator<PolyLine3D>() {
-            private static final float EPSILON = 1e-10f;
+            private static final double EPSILON = 1e-10f;
             @Override
             public int compare(PolyLine3D o1, PolyLine3D o2) {
-                float d = o1.avgZ() - o2.avgZ();
+                double d = o1.avgZ() - o2.avgZ();
                 if (-EPSILON < d && d < EPSILON)
                     return 0;
                 return d < 0 ? -1 : 1;
